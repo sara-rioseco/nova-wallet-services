@@ -1,8 +1,7 @@
 package com.novawallet.converter;
 
 public interface Currency {
-    String getSymbol();
-    double getConversionRate();
-
-    double convert(double amount);
+    double convertToUSD();
+    double convertToCLP();
+    double convertToEUR();
 }

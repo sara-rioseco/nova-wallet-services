@@ -48,14 +48,13 @@ public class Main {
         User currentUser;
         User newUser;
         // Ejecución de programa
-        System.out.println("----------------------------------------");
-        System.out.println("Welcome to "+ANSI_WHITE+"NovaWallet"+ANSI_RESET+" financial services\n----------------------------------------");
+        System.out.println("--------------------------------------------------------");
+        System.out.println("      ~ Welcome to "+ANSI_WHITE+"NovaWallet"+ANSI_RESET+" financial services ~\n--------------------------------------------------------");
 
         Scanner sc = new Scanner(System.in);
         int opt;
         do {
-            System.out.println("What do you want to do?");
-            System.out.println("  1.Login\n  2.Sign Up\n");
+            System.out.println("What do you want to do?\n\n  1.Login\n  2.Sign Up\n");
             System.out.println("Once you write the option, " + ANSI_YELLOW + "press ENTER" + ANSI_RESET +".");
             System.out.println("To close program " + ANSI_RED + "press any other number" + ANSI_RESET + ".\n");
             System.out.print("Please chose an option: ");

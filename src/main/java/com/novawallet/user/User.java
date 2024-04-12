@@ -1,6 +1,8 @@
 package com.novawallet.user;
 
 import java.util.ArrayList;
+import com.novawallet.converter.ChileanPeso;
+import static com.novawallet.ui.Menu.getInitial;
 
 public class User {
     private final int id;
@@ -9,7 +11,7 @@ public class User {
     private String email;
     private String password;
     private String role = "user";
-    private double balance = 0;
+    private ChileanPeso balance = new ChileanPeso(0);
     private ArrayList<Transaction> transactions = new ArrayList<>();
     private ArrayList<Contact> contacts = new ArrayList<>();
 
@@ -66,16 +68,20 @@ public class User {
         this.role = role;
     }
 
+    public String getCurrency() {
+        return balance.getSymbol();
+    }
+
     public double getBalance() {
-        return balance;
+        return balance.getAmount();
     }
 
     public void addBalance(double amount) {
-        this.balance += amount;
+        this.balance = new ChileanPeso(this.balance.getAmount() + amount);
     }
 
     public void withdrawMoney(double amount) {
-        this.balance -= amount;
+        this.balance = new ChileanPeso(this.balance.getAmount() - amount);
     }
 
     public ArrayList<Transaction> getTransactions() {
@@ -101,4 +107,9 @@ public class User {
     public void addContact(Contact contact) {
         this.contacts.add(contact);
     }
+
+    public String getFullName() {
+        return getInitial(name) + name.substring(1) + " " + getInitial(lastname) + lastname.substring(1);
+    }
+
 }
