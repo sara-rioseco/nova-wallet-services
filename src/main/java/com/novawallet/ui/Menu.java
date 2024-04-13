@@ -28,11 +28,11 @@ public class Menu {
             String finalPassword = password;
             isPasswordValid = currentUsers.stream().anyMatch(user -> user.getPassword().equals(finalPassword));
 
-            currentUser = currentUsers.stream().filter(u -> Objects.equals(u.getEmail(), finalEmail)).findFirst().get();
+            currentUser = currentUsers.stream().filter(u -> Objects.equals(u.getEmail(), finalEmail)).findFirst().orElse(null);
 
             System.out.println(!userExists || !isPasswordValid
                     ? "------------------------------------------------------------\nInvalid credentials. Please try again."
-                    : "------------------------------------------------------------\n          You have successfully logged in, " + currentUser.getName() +".");
+                    : "------------------------------------------------------------\n          You have successfully logged in");
             System.out.println("------------------------------------------------------------");
         } while (!userExists || !isPasswordValid);
         return currentUser;
