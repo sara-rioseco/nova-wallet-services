@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 import static java.lang.Integer.parseInt;
 
-public class Withdraw implements MenuOption {
+public abstract class Withdraw implements MenuOption {
     public static void run(User user) {
         System.out.println("\nHere you can withdraw money in " + user.getCurrency() + " from your account.\n------------------------------------------------------------");
         double amount;

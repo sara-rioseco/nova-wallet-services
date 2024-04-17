@@ -27,6 +27,7 @@ public class Main {
         testUser.addTransaction(transaction2);
         users.add(testUser);
 
-        MainMenu.runMenu(users);
+        MainMenu mainMenu = new MainMenu();
+        mainMenu.runMenu(users);
     }
 }

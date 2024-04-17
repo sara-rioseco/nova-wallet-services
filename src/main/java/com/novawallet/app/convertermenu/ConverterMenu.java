@@ -10,7 +10,7 @@ import static com.novawallet.app.Color.*;
 import static com.novawallet.app.Color.RESET;
 import static java.lang.Integer.parseInt;
 
-public abstract class ConverterMenu implements Menu {
+public class ConverterMenu implements Menu {
 
     public void converterMenu(User user) {
         int opt;
@@ -33,7 +33,8 @@ public abstract class ConverterMenu implements Menu {
                     //TODO NewContact.run(user);
                     break;
                 default:
-                    Exit.run();
+                    Exit exit = new Exit();
+                    exit.run();
             }
         } while (opt > 0 && opt < 3);
     }

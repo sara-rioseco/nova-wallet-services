@@ -9,9 +9,9 @@ import com.novawallet.app.usermenu.options.*;
 import com.novawallet.entity.User;
 import static com.novawallet.app.Color.*;
 
-public abstract class UserMenu implements Menu {
+public class UserMenu implements Menu {
 
-    public static void userMenu(User user) {
+    public void userMenu(User user) {
         int opt;
         System.out.print(STR."Hello, \{user.getFullName()}. ");
         do {
@@ -38,16 +38,17 @@ public abstract class UserMenu implements Menu {
                     SeeUserInfo.run(user);
                     break;
                 default:
-                    Exit.run();
+                    Exit exit = new Exit();
+                    exit.run();
             }
         } while (opt > 0 && opt < 7);
     }
 
-    public static void printOptions() {
+    public void printOptions() {
         System.out.println("What do you want to do?\n");
         System.out.println("  1.See my balance\n  2.Deposit funds\n  3.Withdraw funds\n  4.Transfer funds\n  5.Convert currency\n  6.See user information\n");
-        System.out.println("Once you write the option, " + YELLOW.getColor() + "press ENTER" + RESET.getColor() +".");
-        System.out.println("To log out and go back, " + RED.getColor() + "press any other number" + RESET.getColor() + ".\n");
+        System.out.println(STR."Once you write the option, \{YELLOW.getColor()}press ENTER\{RESET.getColor()}.");
+        System.out.println(STR."To log out and go back, \{RED.getColor()}press any other number\{RESET.getColor()}.");
         System.out.print("Please chose an option: ");
     }
 }

@@ -11,7 +11,7 @@ import static com.novawallet.app.Color.*;
 import static com.novawallet.app.Color.RESET;
 import static java.lang.Integer.parseInt;
 
-public abstract class TransferMenu implements Menu {
+public class TransferMenu implements Menu {
 
     public void transferMenu(User user) {
         int opt;
@@ -28,7 +28,8 @@ public abstract class TransferMenu implements Menu {
                     //TODO NewContact.run(user);
                     break;
                 default:
-                    Exit.run();
+                    Exit exit = new Exit();
+                    exit.run();
             }
         } while (opt > 0 && opt < 3);
     }

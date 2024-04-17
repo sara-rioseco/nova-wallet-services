@@ -76,7 +76,8 @@ public class Converter {
                     break;
                 default:
                     System.out.println("----------------------------------------\n    You'll go back to the main menu.\n----------------------------------------");
-                    UserMenu.userMenu(user);
+                    UserMenu menu = new UserMenu();
+                    menu.userMenu(user);
             }
         } while (opt > 0 && opt < 7);
     }
