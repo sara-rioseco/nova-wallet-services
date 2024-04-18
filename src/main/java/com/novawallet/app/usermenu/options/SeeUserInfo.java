@@ -30,7 +30,7 @@ This is your user information
             res.append("\t\tYou don't have any contacts yet.");
         } else {
             for (Contact contact : contacts) {
-                res.append(STR."\t\t\{contacts.indexOf(contact) + 1}. \{contact.getFullname()}, email: \{contact.getEmail()}");
+                res.append(STR."\t\t\{contacts.indexOf(contact) + 1}. \{contact.getFullName()}, email: \{contact.getEmail()}");
             }
         }
         return res.toString();

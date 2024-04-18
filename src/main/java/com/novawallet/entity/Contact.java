@@ -1,7 +1,6 @@
 package com.novawallet.entity;
 
 import static com.novawallet.app.Utils.capitalize;
-import static com.novawallet.app.Utils.getInitial;
 
 /**
  * The type Contact.
@@ -72,11 +71,11 @@ public class Contact {
     }
 
     /**
-     * Gets Fullname.
+     * Gets FullName.
      *
-     * @return the fullname
+     * @return the fullName
      */
-    public String getFullname() {
+    public String getFullName() {
         return STR."\{capitalize(name)} \{capitalize(lastname)}";
     }
 
