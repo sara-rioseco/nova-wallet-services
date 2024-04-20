@@ -1,19 +1,12 @@
-package com.novawallet.app.convertermenu.converter;
+package com.novawallet.entity;
 
-public class UsDollar implements Currency{
+public class UsDollar implements Currency {
     private final double amount;
-    private String symbol = "USD";
     private double conversionRateInCLP = 945; // Al 11 de abril
     private double conversionRateInEUR = 0.9256; // Al 11 de abril
 
     public UsDollar(double amount) {
         this.amount = amount;
-    }
-
-    @Override
-    public double convertToUSD() {
-        System.out.println("It is not possible to convert USD to USD.");
-        return amount;
     }
 
     @Override
@@ -27,7 +20,11 @@ public class UsDollar implements Currency{
     }
 
     public String getSymbol() {
-        return symbol;
+        return "USD";
+    }
+
+    public double getAmount() {
+        return amount;
     }
 
     public double getConversionRateInCLP() {
@@ -38,10 +35,6 @@ public class UsDollar implements Currency{
         return conversionRateInEUR;
     }
 
-    public void setSymbol(String symbol) {
-        this.symbol = symbol;
-    }
-
     public void setConversionRateInCLP(double conversionRateInCLP) {
         this.conversionRateInCLP = conversionRateInCLP;
     }
@@ -50,8 +43,5 @@ public class UsDollar implements Currency{
         this.conversionRateInEUR = conversionRateInEUR;
     }
 
-    public double getAmount() {
-        return amount;
-    }
 }
 

@@ -15,8 +15,8 @@ public abstract class SeeUserInfo implements MenuOption {
 This is your user information
 \tName: \{user.getFullName()}
 \tEmail: \{user.getEmail()}
-\tCurrency: \{user.getCurrency()}
-\tBalance: \{user.getBalance()}
+\tCurrency: \{user.getBalanceCurrency()}
+\tBalance: \{(int)user.getBalanceAmount()}
 \tContacts:\s
 \{getContactsAsString(user.getContacts())}
 \tTransactions:\s

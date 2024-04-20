@@ -9,7 +9,7 @@ import static java.lang.Integer.parseInt;
 
 public abstract class Deposit implements MenuOption {
     public static void run(User user) {
-        System.out.println("\nHere you can deposit funds in "+ user.getCurrency()+" to your account.\n------------------------------------------------------------");
+        System.out.println("\nHere you can deposit funds in "+ user.getBalanceCurrency()+" to your account.\n------------------------------------------------------------");
         double amount;
 
         do {

@@ -1,8 +1,5 @@
 package com.novawallet.entity;
 
-import com.novawallet.app.convertermenu.converter.ChileanPeso;
-import com.novawallet.app.convertermenu.converter.Currency;
-
 import java.time.LocalDateTime;
 
 public class Transaction {

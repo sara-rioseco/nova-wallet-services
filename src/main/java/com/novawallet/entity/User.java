@@ -1,8 +1,6 @@
 package com.novawallet.entity;
 
 import java.util.ArrayList;
-import com.novawallet.app.convertermenu.converter.ChileanPeso;
-import com.novawallet.app.convertermenu.converter.Currency;
 
 import static com.novawallet.app.Utils.capitalize;
 
@@ -79,13 +77,15 @@ public class User {
         this.role = role;
     }
 
-    public String getCurrency() {
+    public String getBalanceCurrency() {
         return balance.getSymbol();
     }
 
-    public double getBalance() {
+    public double getBalanceAmount() {
         return balance.getAmount();
     }
+
+    public Currency getBalanceObject() { return balance; }
 
     public void addBalance(double amount) {
         this.balance = new ChileanPeso(this.balance.getAmount() + amount);

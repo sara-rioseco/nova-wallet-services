@@ -9,18 +9,18 @@ import static java.lang.Integer.parseInt;
 
 public abstract class Withdraw implements MenuOption {
     public static void run(User user) {
-        System.out.println("\nHere you can withdraw money in " + user.getCurrency() + " from your account.\n------------------------------------------------------------");
+        System.out.println("\nHere you can withdraw money in " + user.getBalanceCurrency() + " from your account.\n------------------------------------------------------------");
         double amount;
         do {
             Scanner sc = new Scanner(System.in);
-            System.out.print("How much money are you going to withdraw in " + user.getCurrency() + "? : ");
+            System.out.print("How much money are you going to withdraw in " + user.getBalanceCurrency() + "? : ");
             amount = parseInt(sc.nextLine());
             System.out.println(amount <= 0
                     ? "Invalid amount, withdraw failed. Please try again.\n------------------------------------------------------------"
-                    : amount > user.getBalance()
+                    : amount > user.getBalanceAmount()
                     ? "Not enough funds, withdraw failed. Please try again.\n------------------------------------------------------------"
                     : "Successfully withdraw funds.\n------------------------------------------------------------");
-        } while (amount <= 0 || amount > user.getBalance());
+        } while (amount <= 0 || amount > user.getBalanceAmount());
         user.withdrawMoney(amount);
     }
 }

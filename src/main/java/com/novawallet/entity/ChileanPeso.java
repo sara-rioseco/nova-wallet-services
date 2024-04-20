@@ -1,6 +1,6 @@
-package com.novawallet.app.convertermenu.converter;
+package com.novawallet.entity;
 
-public class ChileanPeso implements Currency{
+public class ChileanPeso implements Currency {
     private final double amount;
     private String symbol = "CLP";
     private double conversionRateInUSD = 0.00106; // Al 11 de abril
@@ -14,12 +14,6 @@ public class ChileanPeso implements Currency{
     public double convertToUSD() {
         float rounded = Math.round(amount*conversionRateInUSD*100);
         return rounded / 100;
-    }
-
-    @Override
-    public double convertToCLP() {
-        System.out.println("It is not possible to convert CLP to CLP.");
-        return 0;
     }
 
     @Override

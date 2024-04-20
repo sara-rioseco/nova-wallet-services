@@ -1,10 +1,9 @@
-package com.novawallet.app.convertermenu.converter;
+package com.novawallet.entity;
 
-public class Euro implements Currency{
+public class Euro implements Currency {
     private final double amount;
-    private String symbol = "EUR";
     private double conversionRateInCLP = 1021; // Al 11 de abril
-    private double conversionRateInUSD = 1.0803; // Al 11 de abril
+    private double conversionRateInUSD = 1.08; // Al 11 de abril
 
     public Euro(double amount) {
         this.amount = amount;
@@ -22,14 +21,12 @@ public class Euro implements Currency{
         return rounded / 100;
     }
 
-    @Override
-    public double convertToEUR() {
-        System.out.println("It is not possible to convert EUR to EUR.");
-        return amount;
+    public String getSymbol() {
+        return "EUR";
     }
 
-    public String getSymbol() {
-        return symbol;
+    public double getAmount() {
+        return amount;
     }
 
     public double getConversionRateInCLP() {
@@ -40,20 +37,12 @@ public class Euro implements Currency{
         return conversionRateInUSD;
     }
 
-    public void setSymbol(String symbol) {
-        this.symbol = symbol;
-    }
-
     public void setConversionRateInCLP(double conversionRateInCLP) {
         this.conversionRateInCLP = conversionRateInCLP;
     }
 
     public void setConversionRateInUSD(double conversionRateInUSD) {
         this.conversionRateInUSD = conversionRateInUSD;
-    }
-
-    public double getAmount() {
-        return amount;
     }
 }
 
