@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public abstract class Login implements MenuOption {
 
-    public static User run() {
+    public User run() {
         ArrayList<User> currentUsers = Main.users;
         Scanner sc = new Scanner(System.in);
         String email;

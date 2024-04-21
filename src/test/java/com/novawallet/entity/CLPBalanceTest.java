@@ -5,65 +5,65 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ChileanPesoTest {
+class CLPBalanceTest {
 
-    ChileanPeso chileanPeso;
+    CLPBalance clpBalance;
     @BeforeEach
     public void setup() {
-        chileanPeso = new ChileanPeso(100000);
+        clpBalance = new CLPBalance(100000);
     }
 
     @Test
     void testConvertToUSD() {
-        double converted = chileanPeso.convertToUSD();
+        double converted = clpBalance.convertToUSD();
         assertEquals(106.0, converted);
     }
 
     @Test
     void testConvertToEUR() {
-        double converted = chileanPeso.convertToEUR();
+        double converted = clpBalance.convertToEUR();
         assertEquals(98.0, converted);
     }
 
     @Test
     void testGetSymbol() {
-        String symbol = chileanPeso.getSymbol();
+        String symbol = clpBalance.getSymbol();
         assertEquals("CLP", symbol);
     }
 
     @Test
     void testGetConversionRateInUSD() {
-        double conversionRateInUSD = chileanPeso.getConversionRateInUSD();
+        double conversionRateInUSD = clpBalance.getConversionRateInUSD();
         assertEquals(0.00106, conversionRateInUSD);
     }
 
     @Test
     void testGetConversionRateInEUR() {
-        double conversionRateInEUR = chileanPeso.getConversionRateInEUR();
+        double conversionRateInEUR = clpBalance.getConversionRateInEUR();
         assertEquals(0.00098, conversionRateInEUR);
     }
 
     @Test
     void testSetSymbol() {
-        chileanPeso.setSymbol("CLP $");
-        assertEquals("CLP $", chileanPeso.getSymbol());
+        clpBalance.setSymbol("CLP $");
+        assertEquals("CLP $", clpBalance.getSymbol());
     }
 
     @Test
     void testSetConversionRateInUSD() {
-        chileanPeso.setConversionRateInUSD(0.00108);
-        assertEquals(0.00108, chileanPeso.getConversionRateInUSD());
+        clpBalance.setConversionRateInUSD(0.00108);
+        assertEquals(0.00108, clpBalance.getConversionRateInUSD());
     }
 
     @Test
     void testSetConversionRateInEUR() {
-        chileanPeso.setConversionRateInEUR(0.00099);
-        assertEquals(0.00099, chileanPeso.getConversionRateInEUR());
+        clpBalance.setConversionRateInEUR(0.00099);
+        assertEquals(0.00099, clpBalance.getConversionRateInEUR());
     }
 
     @Test
     void testGetAmount() {
-        double amount = chileanPeso.getAmount();
+        double amount = clpBalance.getAmount();
         assertEquals(100000.0, amount);
     }
 }

@@ -11,35 +11,36 @@ import static com.novawallet.app.Color.*;
 
 public class UserMenu implements Menu {
 
-    public void userMenu(User user) {
+    public void userMenu(User loggedInUser) {
+        User user;
         int opt;
-        System.out.print(STR."Hello, \{user.getFullName()}. ");
+        System.out.print(STR."Hello, \{loggedInUser.getFullName()}. ");
         do {
             Scanner sc = new Scanner(System.in);
             printOptions();
             opt = parseInt(sc.nextLine());
             switch (opt) {
                 case 1:
-                    SeeBalance.run(user);
+                    user = SeeBalance.run(loggedInUser);
                     break;
                 case 2:
-                    Deposit.run(user);
+                    user = Deposit.run(loggedInUser);
                     break;
                 case 3:
-                    Withdraw.run(user);
+                    user = Withdraw.run(loggedInUser);
                     break;
                 case 4:
-                    Transfer.run(user);
+                    user = Transfer.run(loggedInUser);
                     break;
                 case 5:
-                    Convert.run(user);
+                    user = Convert.run(loggedInUser);
                     break;
                 case 6:
-                    SeeUserInfo.run(user);
+                    user = SeeUserInfo.run(loggedInUser);
                     break;
                 default:
                     Exit exit = new Exit();
-                    exit.run();
+                    exit.run(loggedInUser);
             }
         } while (opt > 0 && opt < 7);
     }
@@ -48,7 +49,7 @@ public class UserMenu implements Menu {
         System.out.println("What do you want to do?\n");
         System.out.println("  1.See my balance\n  2.Deposit funds\n  3.Withdraw funds\n  4.Transfer funds\n  5.Convert currency\n  6.See user information\n");
         System.out.println(STR."Once you write the option, \{YELLOW.getColor()}press ENTER\{RESET.getColor()}.");
-        System.out.println(STR."To log out and go back, \{RED.getColor()}press any other number\{RESET.getColor()}.");
+        System.out.println(STR."To log out and exit, \{RED.getColor()}press any other number\{RESET.getColor()}.");
         System.out.print("Please chose an option: ");
     }
 }

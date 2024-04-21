@@ -5,59 +5,59 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class UsDollarTest {
+class USDBalanceTest {
 
-    UsDollar dollar;
+    USDBalance usdBalance;
     @BeforeEach
     public void setup() {
-        dollar = new UsDollar(100);
+        usdBalance = new USDBalance(100);
     }
 
     @Test
     void testConvertToCLP() {
-        double converted = dollar.convertToCLP();
+        double converted = usdBalance.convertToCLP();
         assertEquals(94500.0, converted);
     }
 
     @Test
     void testConvertToEUR() {
-        double converted = dollar.convertToEUR();
+        double converted = usdBalance.convertToEUR();
         assertEquals(92.56, converted);
     }
 
     @Test
     void testGetSymbol() {
-        String symbol = dollar.getSymbol();
+        String symbol = usdBalance.getSymbol();
         assertEquals("USD", symbol);
     }
 
     @Test
     void testGetAmount() {
-        double amount = dollar.getAmount();
+        double amount = usdBalance.getAmount();
         assertEquals(100, amount);
     }
 
     @Test
     void testGetConversionRateInCLP() {
-        double conversionRateInCLP = dollar.getConversionRateInCLP();
+        double conversionRateInCLP = usdBalance.getConversionRateInCLP();
         assertEquals(945, conversionRateInCLP);
     }
 
     @Test
     void testGetConversionRateInEUR() {
-        double conversionRateInEUR = dollar.getConversionRateInEUR();
+        double conversionRateInEUR = usdBalance.getConversionRateInEUR();
         assertEquals(0.9256, conversionRateInEUR);
     }
 
     @Test
     void testSetConversionRateInCLP() {
-        dollar.setConversionRateInCLP(950);
-        assertEquals(950, dollar.getConversionRateInCLP());
+        usdBalance.setConversionRateInCLP(950);
+        assertEquals(950, usdBalance.getConversionRateInCLP());
     }
 
     @Test
     void testSetConversionRateInEUR() {
-        dollar.setConversionRateInEUR(0.93);
-        assertEquals(0.93, dollar.getConversionRateInEUR());
+        usdBalance.setConversionRateInEUR(0.93);
+        assertEquals(0.93, usdBalance.getConversionRateInEUR());
     }
 }

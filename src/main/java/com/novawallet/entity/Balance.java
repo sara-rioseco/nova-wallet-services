@@ -1,6 +1,6 @@
 package com.novawallet.entity;
 
-public interface Currency {
+public interface Balance {
     String getSymbol();
     double getAmount();
 

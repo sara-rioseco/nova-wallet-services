@@ -126,7 +126,7 @@ class UserTest {
 
     @Test
     public void testGetBalanceObject(){
-        Currency balance = user.getBalanceObject();
+        Balance balance = user.getBalanceObject();
         assertEquals(0.0, balance.getAmount());
         assertEquals("CLP", balance.getSymbol());
     }

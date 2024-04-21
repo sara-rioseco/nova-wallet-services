@@ -1,12 +1,12 @@
 package com.novawallet.entity;
 
-public class ChileanPeso implements Currency {
+public class CLPBalance implements Balance {
     private final double amount;
     private String symbol = "CLP";
     private double conversionRateInUSD = 0.00106; // Al 11 de abril
     private double conversionRateInEUR = 0.00098; // Al 11 de abril
 
-    public ChileanPeso(double amount) {
+    public CLPBalance(double amount) {
         this.amount = amount;
     }
 

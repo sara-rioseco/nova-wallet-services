@@ -8,7 +8,7 @@ import java.util.Scanner;
 import static java.lang.Integer.parseInt;
 
 public abstract class Deposit implements MenuOption {
-    public static void run(User user) {
+    public static User run(User user) {
         System.out.println("\nHere you can deposit funds in "+ user.getBalanceCurrency()+" to your account.\n------------------------------------------------------------");
         double amount;
 
@@ -21,5 +21,6 @@ public abstract class Deposit implements MenuOption {
                     : "Successfully deposited funds.\n------------------------------------------------------------");
         } while (amount <= 0);
         user.addBalance(amount);
+        return user;
     }
 }

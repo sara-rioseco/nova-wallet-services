@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import static java.lang.StringTemplate.STR;
 
 public abstract class SeeUserInfo implements MenuOption {
-    public static void run(User user) {
+    public static User run(User user) {
         System.out.println(STR."""
 This is your user information
 \tName: \{user.getFullName()}
@@ -22,6 +22,7 @@ This is your user information
 \tTransactions:\s
 \{getTransactionsAsString(user.getTransactions(), user)}
 ------------------------------------------------------------""");
+        return user;
     }
 
     private static String getContactsAsString (ArrayList<Contact> contacts) {

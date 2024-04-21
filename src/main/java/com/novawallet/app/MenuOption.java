@@ -1,5 +1,7 @@
 package com.novawallet.app;
 
+import com.novawallet.entity.User;
+
 public interface MenuOption {
-    void run();
+    User run();
 }

@@ -8,7 +8,7 @@ import java.util.Scanner;
 import static java.lang.Integer.parseInt;
 
 public abstract class Withdraw implements MenuOption {
-    public static void run(User user) {
+    public static User run(User user) {
         System.out.println("\nHere you can withdraw money in " + user.getBalanceCurrency() + " from your account.\n------------------------------------------------------------");
         double amount;
         do {
@@ -22,5 +22,6 @@ public abstract class Withdraw implements MenuOption {
                     : "Successfully withdraw funds.\n------------------------------------------------------------");
         } while (amount <= 0 || amount > user.getBalanceAmount());
         user.withdrawMoney(amount);
+        return user;
     }
 }

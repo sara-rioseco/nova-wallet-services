@@ -1,7 +1,7 @@
 package com.novawallet.app.convertermenu.options;
 
 import com.novawallet.app.MenuOption;
-import com.novawallet.entity.ChileanPeso;
+import com.novawallet.entity.CLPBalance;
 import com.novawallet.entity.User;
 
 import java.util.Scanner;
@@ -15,11 +15,11 @@ public abstract class ConvertCLP implements MenuOption {
 
 Hello \{capitalize(user.getName())}, here you can convert CLP into USD and EUR.
 ------------------------------------------------------------""");
-        ChileanPeso amount;
+        CLPBalance amount;
         do {
             Scanner sc = new Scanner(System.in);
             System.out.print("How much money in CLP do you want to convert? : ");
-            amount = new ChileanPeso(parseInt(sc.nextLine()));
+            amount = new CLPBalance(parseInt(sc.nextLine()));
             System.out.println(amount.getAmount() <= 0
                     ? "Invalid amount, conversion failed. Please try again.\n------------------------------------------------------------"
                     : "$" + (int)amount.getAmount() + " CLP is equivalent to "

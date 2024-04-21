@@ -4,10 +4,11 @@ import com.novawallet.app.MenuOption;
 import com.novawallet.entity.User;
 
 public abstract class Transfer implements MenuOption {
-    public static void run(User user) {
+    public static User run(User user) {
         System.out.println(STR."""
 
 Sorry \{user.getFullName()}, this section is under maintenance.
 ------------------------------------------------------------""");
+        return user;
     }
 }

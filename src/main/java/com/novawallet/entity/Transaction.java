@@ -4,14 +4,14 @@ import java.time.LocalDateTime;
 
 public class Transaction {
     private final int id;
-    private final Currency amount;
+    private final Balance amount;
     private final int senderId;
     private final int receiverId;
     private final LocalDateTime date = LocalDateTime.now();
 
     public Transaction(int id, double amount, int senderId, int receiverId) {
         this.id = id;
-        this.amount = new ChileanPeso(amount);
+        this.amount = new CLPBalance(amount);
         this.senderId = senderId;
         this.receiverId = receiverId;
     }

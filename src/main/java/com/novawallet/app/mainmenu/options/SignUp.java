@@ -11,8 +11,7 @@ import static com.novawallet.app.Utils.capitalize;
 
 public abstract class SignUp implements MenuOption {
 
-
-    public static User run() {
+    public User run() {
         ArrayList<User> currentUsers = Main.users;
         String email;
         String password;

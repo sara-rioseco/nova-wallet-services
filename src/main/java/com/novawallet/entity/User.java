@@ -11,7 +11,7 @@ public class User {
     private String email;
     private String password;
     private String role = "user";
-    private Currency balance = new ChileanPeso(0);
+    private Balance balance = new CLPBalance(0);
     private ArrayList<Transaction> transactions = new ArrayList<>();
     private ArrayList<Contact> contacts = new ArrayList<>();
 
@@ -30,7 +30,7 @@ public class User {
         this.lastname = lastname;
         this.email = email;
         this.password = password;
-        this.balance = new ChileanPeso(balance);
+        this.balance = new CLPBalance(balance);
     }
 
     public int getId() {
@@ -85,14 +85,14 @@ public class User {
         return balance.getAmount();
     }
 
-    public Currency getBalanceObject() { return balance; }
+    public Balance getBalanceObject() { return balance; }
 
     public void addBalance(double amount) {
-        this.balance = new ChileanPeso(this.balance.getAmount() + amount);
+        this.balance = new CLPBalance(this.balance.getAmount() + amount);
     }
 
     public void withdrawMoney(double amount) {
-        this.balance = new ChileanPeso(this.balance.getAmount() - amount);
+        this.balance = new CLPBalance(this.balance.getAmount() - amount);
     }
 
     public ArrayList<Transaction> getTransactions() {

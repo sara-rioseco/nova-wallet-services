@@ -1,11 +1,11 @@
 package com.novawallet.entity;
 
-public class UsDollar implements Currency {
+public class USDBalance implements Balance {
     private final double amount;
     private double conversionRateInCLP = 945; // Al 11 de abril
     private double conversionRateInEUR = 0.9256; // Al 11 de abril
 
-    public UsDollar(double amount) {
+    public USDBalance(double amount) {
         this.amount = amount;
     }
 
