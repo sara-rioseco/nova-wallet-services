@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
 
-public abstract class Login implements MenuOption {
+public class Login implements MenuOption {
 
     public User run() {
         ArrayList<User> currentUsers = Main.users;

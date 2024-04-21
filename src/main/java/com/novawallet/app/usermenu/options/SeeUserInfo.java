@@ -3,6 +3,7 @@ package com.novawallet.app.usermenu.options;
 import com.novawallet.app.MenuOption;
 import com.novawallet.entity.Contact;
 import com.novawallet.entity.Transaction;
+import com.novawallet.entity.TransactionType;
 import com.novawallet.entity.User;
 import static com.novawallet.app.Utils.*;
 
@@ -31,7 +32,7 @@ This is your user information
             res.append("\t\tYou don't have any contacts yet.");
         } else {
             for (Contact contact : contacts) {
-                res.append(STR."\t\t\{contacts.indexOf(contact) + 1}. \{contact.getFullName()}, email: \{contact.getEmail()}");
+                res.append(STR."\t\t\{contacts.indexOf(contact) + 1}. \{contact.getFullName()}, email: \{contact.getEmail()}\n");
             }
         }
         return res.toString();
@@ -43,9 +44,25 @@ This is your user information
             res.append("\t\tYou don't have any transactions yet.");
         } else {
             for (Transaction transaction : transactions) {
-                res.append(STR."\t\t\{transactions.indexOf(transaction) + 1}. On \{formatDate(transaction.getDate())} at \{formatTime(transaction.getDate())}, you \{ transaction.getSenderId() == user.getId() ? "transferred" : "received"} \{transaction.getAmount()} \{transaction.getCurrency()}.");
+                res.append(STR."\t\t\{transactions.indexOf(transaction) + 1}. On \{formatDate(transaction.getDate())} at \{
+                        formatTime(transaction.getDate())}, you \{getTransactionAction(transaction, user)} \{transaction.getAmount()} \{transaction.getCurrency()}.\n");
             }
         }
         return res.toString();
     }
+
+    private static String getTransactionAction(Transaction transaction, User user) {
+        if (transaction.getType() == TransactionType.TRANSFER) {
+            if (transaction.getSenderId() == user.getId()) {
+                return "transferred";
+            } else {
+                return "received";
+            }
+        } else if (transaction.getType() == TransactionType.DEPOSIT) {
+            return "deposited";
+        } else {
+            return "withdraw";
+        }
+    }
 }
+

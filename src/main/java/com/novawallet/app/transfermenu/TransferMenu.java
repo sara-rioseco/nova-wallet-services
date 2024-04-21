@@ -2,6 +2,8 @@ package com.novawallet.app.transfermenu;
 
 import com.novawallet.app.Menu;
 import com.novawallet.app.mainmenu.options.Exit;
+import com.novawallet.app.transfermenu.options.ExistingContact;
+import com.novawallet.app.transfermenu.options.NewContact;
 import com.novawallet.app.usermenu.options.*;
 import com.novawallet.entity.User;
 
@@ -22,10 +24,10 @@ public class TransferMenu implements Menu {
             opt = parseInt(sc.nextLine());
             switch (opt) {
                 case 1:
-                    //TODO ExistingContact.run(user);
+                    ExistingContact.run(user);
                     break;
                 case 2:
-                    //TODO NewContact.run(user);
+                    NewContact.run(user);
                     break;
                 default:
                     Exit exit = new Exit();

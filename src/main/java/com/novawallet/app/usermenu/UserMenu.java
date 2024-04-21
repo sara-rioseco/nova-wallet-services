@@ -40,7 +40,7 @@ public class UserMenu implements Menu {
                     break;
                 default:
                     Exit exit = new Exit();
-                    exit.run(loggedInUser);
+                    exit.run();
             }
         } while (opt > 0 && opt < 7);
     }

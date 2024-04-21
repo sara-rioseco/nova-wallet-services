@@ -2,7 +2,6 @@ package com.novawallet.entity;
 
 public class CLPBalance implements Balance {
     private final double amount;
-    private String symbol = "CLP";
     private double conversionRateInUSD = 0.00106; // Al 11 de abril
     private double conversionRateInEUR = 0.00098; // Al 11 de abril
 
@@ -23,7 +22,7 @@ public class CLPBalance implements Balance {
     }
 
     public String getSymbol() {
-        return symbol;
+        return "CLP";
     }
 
     public double getConversionRateInUSD() {
@@ -32,10 +31,6 @@ public class CLPBalance implements Balance {
 
     public double getConversionRateInEUR() {
         return conversionRateInEUR;
-    }
-
-    public void setSymbol(String symbol) {
-        this.symbol = symbol;
     }
 
     public void setConversionRateInUSD(double conversionRateInUSD) {

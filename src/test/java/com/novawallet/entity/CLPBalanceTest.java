@@ -44,12 +44,6 @@ class CLPBalanceTest {
     }
 
     @Test
-    void testSetSymbol() {
-        clpBalance.setSymbol("CLP $");
-        assertEquals("CLP $", clpBalance.getSymbol());
-    }
-
-    @Test
     void testSetConversionRateInUSD() {
         clpBalance.setConversionRateInUSD(0.00108);
         assertEquals(0.00108, clpBalance.getConversionRateInUSD());

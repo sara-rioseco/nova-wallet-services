@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import com.novawallet.app.Menu;
+import com.novawallet.app.MenuOption;
 import com.novawallet.app.mainmenu.options.*;
 import com.novawallet.app.usermenu.UserMenu;
 import com.novawallet.entity.User;
@@ -30,12 +31,14 @@ public class MainMenu implements Menu {
             opt = parseInt(sc.nextLine());
             switch (opt) {
                 case 1:
-                    currentUser = Login.run();
+                    MenuOption login = new Login();
+                    currentUser = login.run();
                     UserMenu menuLogin = new UserMenu();
                     menuLogin.userMenu(currentUser);
                     break;
                 case 2:
-                    newUser = SignUp.run();
+                    MenuOption signUp = new SignUp();
+                    newUser = signUp.run();
                     users.add(newUser);
                     UserMenu menuSignUp = new UserMenu();
                     menuSignUp.userMenu(newUser);

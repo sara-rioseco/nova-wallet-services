@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 import static com.novawallet.app.Utils.capitalize;
 
-public abstract class SignUp implements MenuOption {
+public class SignUp implements MenuOption {
 
     public User run() {
         ArrayList<User> currentUsers = Main.users;
