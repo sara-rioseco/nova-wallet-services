@@ -26,7 +26,7 @@ This is your user information
         return user;
     }
 
-    private static String getContactsAsString (ArrayList<Contact> contacts) {
+    public static String getContactsAsString (ArrayList<Contact> contacts) {
         StringBuilder res = new StringBuilder();
         if (contacts.isEmpty()) {
             res.append("\t\tYou don't have any contacts yet.");
@@ -45,7 +45,7 @@ This is your user information
         } else {
             for (Transaction transaction : transactions) {
                 res.append(STR."\t\t\{transactions.indexOf(transaction) + 1}. On \{formatDate(transaction.getDate())} at \{
-                        formatTime(transaction.getDate())}, you \{getTransactionAction(transaction, user)} \{transaction.getAmount()} \{transaction.getCurrency()}.\n");
+                        formatTime(transaction.getDate())}, you \{getTransactionAction(transaction, user)} \{(int)transaction.getAmount()} \{transaction.getCurrency()}.\n");
             }
         }
         return res.toString();

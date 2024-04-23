@@ -30,8 +30,7 @@ public class TransferMenu implements Menu {
                     NewContact.run(user);
                     break;
                 default:
-                    Exit exit = new Exit();
-                    exit.run();
+                    System.out.println("------------------------------------------------------------\n             You'll go back to the user menu.\n------------------------------------------------------------");
             }
         } while (opt > 0 && opt < 3);
     }

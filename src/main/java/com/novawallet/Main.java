@@ -29,6 +29,10 @@ public class Main {
         testUser.addTransaction(transaction2);
         users.add(testUser);
 
+        // Creación de usuario test2
+        User testUser2 = new User(users.size()+ 1, "test2", "user2", "test2@novawallet.com", "password");
+        users.add(testUser2);
+
         MainMenu mainMenu = new MainMenu();
         mainMenu.runMenu(users);
     }
