@@ -3,7 +3,6 @@ package com.novawallet.app.mainmenu.options;
 import com.novawallet.Main;
 import com.novawallet.app.MenuOption;
 import com.novawallet.entity.User;
-
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;

@@ -1,26 +1,29 @@
 package com.novawallet.app.usermenu.options;
 
+import java.util.ArrayList;
 import com.novawallet.app.MenuOption;
 import com.novawallet.entity.Contact;
 import com.novawallet.entity.Transaction;
 import com.novawallet.entity.TransactionType;
 import com.novawallet.entity.User;
+import static com.novawallet.app.Color.*;
 import static com.novawallet.app.Utils.*;
-
-import java.util.ArrayList;
 import static java.lang.StringTemplate.STR;
 
 public abstract class SeeUserInfo implements MenuOption {
     public static User run(User user) {
         System.out.println(STR."""
-This is your user information
-\tName: \{user.getFullName()}
-\tEmail: \{user.getEmail()}
-\tCurrency: \{user.getBalanceCurrency()}
-\tBalance: \{(int)user.getBalanceAmount()}
-\tContacts:\s
+------------------------------------------------------------
+               This is your user information
+------------------------------------------------------------
+
+\t\{WHITE.getColor()}Name:\{RESET.getColor()} \{user.getFullName()}
+\t\{WHITE.getColor()}Email:\{RESET.getColor()} \{user.getEmail()}
+\t\{WHITE.getColor()}Currency:\{RESET.getColor()} \{user.getBalanceCurrency()}
+\t\{WHITE.getColor()}Balance:\{RESET.getColor()} \{(int)user.getBalanceAmount()}
+\t\{WHITE.getColor()}Contacts:\{RESET.getColor()}\s
 \{getContactsAsString(user.getContacts())}
-\tTransactions:\s
+\t\{WHITE.getColor()}Transactions:\{RESET.getColor()}\s
 \{getTransactionsAsString(user.getTransactions(), user)}
 ------------------------------------------------------------""");
         return user;
@@ -41,11 +44,11 @@ This is your user information
     private static String getTransactionsAsString (ArrayList<Transaction> transactions, User user) {
         StringBuilder res = new StringBuilder();
         if (transactions.isEmpty()) {
-            res.append("\t\tYou don't have any transactions yet.");
+            res.append("\t\tYou don't have any transactions yet.\n");
         } else {
             for (Transaction transaction : transactions) {
                 res.append(STR."\t\t\{transactions.indexOf(transaction) + 1}. On \{formatDate(transaction.getDate())} at \{
-                        formatTime(transaction.getDate())}, you \{getTransactionAction(transaction, user)} \{(int)transaction.getAmount()} \{transaction.getCurrency()}.\n");
+                    formatTime(transaction.getDate())}, you \{getTransactionAction(transaction, user)} \{(int)transaction.getAmount()} \{transaction.getCurrency()}.\n");
             }
         }
         return res.toString();

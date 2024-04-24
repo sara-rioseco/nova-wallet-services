@@ -4,7 +4,7 @@ public interface Balance {
     String getSymbol();
     double getAmount();
 
-    default double convertToUSD() {
+    default float convertToUSD() {
         return 0;
     }
 
@@ -12,7 +12,7 @@ public interface Balance {
         return 0;
     }
 
-    default double convertToEUR() {
+    default float convertToEUR() {
         return 0;
     }
 }

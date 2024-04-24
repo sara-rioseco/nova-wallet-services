@@ -10,13 +10,13 @@ public class CLPBalance implements Balance {
     }
 
     @Override
-    public double convertToUSD() {
+    public float convertToUSD() {
         float rounded = Math.round(amount*conversionRateInUSD*100);
         return rounded / 100;
     }
 
     @Override
-    public double convertToEUR() {
+    public float convertToEUR() {
         float rounded = Math.round(amount*conversionRateInEUR*100);
         return rounded / 100;
     }

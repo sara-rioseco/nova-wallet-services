@@ -1,21 +1,24 @@
 package com.novawallet.app.usermenu.options;
 
+import java.util.Scanner;
 import com.novawallet.app.MenuOption;
 import com.novawallet.entity.Transaction;
 import com.novawallet.entity.User;
-
-import java.util.Scanner;
-
 import static com.novawallet.entity.TransactionType.WITHDRAWAL;
 import static java.lang.Integer.parseInt;
 
 public abstract class Withdraw implements MenuOption {
+
     public static User run(User user) {
-        System.out.println("\nHere you can withdraw money in " + user.getBalanceCurrency() + " from your account.\n------------------------------------------------------------");
+
+        System.out.println(STR."""
+
+Here you can withdraw money in \{user.getBalanceCurrency()} from your account.
+------------------------------------------------------------""");
         double amount;
         do {
             Scanner sc = new Scanner(System.in);
-            System.out.print("How much money are you going to withdraw in " + user.getBalanceCurrency() + "? : ");
+            System.out.print(STR."How much money are you going to withdraw in \{user.getBalanceCurrency()}? : ");
             amount = parseInt(sc.nextLine());
             System.out.println(amount <= 0
                     ? "Invalid amount, withdraw failed. Please try again.\n------------------------------------------------------------"

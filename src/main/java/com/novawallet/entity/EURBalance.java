@@ -10,7 +10,7 @@ public class EURBalance implements Balance {
     }
 
     @Override
-    public double convertToUSD() {
+    public float convertToUSD() {
         float rounded = Math.round(amount*conversionRateInUSD*100);
         return rounded / 100;
     }

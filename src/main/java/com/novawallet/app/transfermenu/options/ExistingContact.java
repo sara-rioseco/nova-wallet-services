@@ -2,6 +2,7 @@ package com.novawallet.app.transfermenu.options;
 
 import com.novawallet.Main;
 import com.novawallet.app.MenuOption;
+import com.novawallet.entity.Balance;
 import com.novawallet.entity.Contact;
 import com.novawallet.entity.Transaction;
 import com.novawallet.entity.User;
@@ -21,25 +22,51 @@ public abstract class ExistingContact implements MenuOption {
 
         Scanner sc = new Scanner(System.in);
         ArrayList<Contact> contacts = user.getContacts();
+
+        if (notEnoughFunds(user) != null) return user;
+
         int contactsLength = contacts.size();
         System.out.println("These are your contacts: ");
         System.out.println(getContactsAsString(contacts));
 
-        int option;
-        Contact contact;
-        do {
-            System.out.print("Who do you want to transfer to? Option number: ");
-            option = parseInt(sc.nextLine());
-            System.out.println(option <= 0 || option > contactsLength
-                ? "Invalid option, transfer failed. Please try again.\n------------------------------------------------------------"
-                : "You've selected contact " + contacts.get(option - 1).getFullName() + "\n------------------------------------------------------------");
-        } while (option <= 0 || option > contactsLength);
+        if(contactsLength <= 0) {
+            System.out.println("You'll return to the transfer menu.\n------------------------------------------------------------");
+            return user;
+        }
 
-        contact = contacts.get(option - 1);
+        else {
+            int option;
+            Contact contact;
+            do {
+                System.out.print("Who do you want to transfer to? Please enter contact number: ");
+                option = parseInt(sc.nextLine());
+                System.out.println(option <= 0 || option > contactsLength
+                        ? "Invalid option, transfer failed. Please try again.\n------------------------------------------------------------"
+                        : STR."""
+You've selected contact \{contacts.get(option - 1).getFullName()}
+------------------------------------------------------------""");
+            } while (option <= 0 || option > contactsLength);
 
+            contact = contacts.get(option - 1);
+
+            return processTransfer(user, sc, contact);
+        }
+    }
+
+    protected static User notEnoughFunds(User user) {
+        double balance = user.getBalanceAmount();
+
+        if (balance <=0 ) {
+            System.out.println("You don't have enough funds to transfer. You'll go back to the transfer menu\n------------------------------------------------------------");
+            return user;
+        }
+        return null;
+    }
+
+    protected static User processTransfer(User user, Scanner sc, Contact contact) {
         int amount;
         do {
-            System.out.print("How much money are you going to transfer to " + contact.getFullName() + "? : ");
+            System.out.print(STR."How much money are you going to transfer to \{contact.getFullName()}? : ");
             amount = parseInt(sc.nextLine());
             System.out.println(amount <= 0
                 ? "Invalid amount, transfer failed. Please try again.\n------------------------------------------------------------"

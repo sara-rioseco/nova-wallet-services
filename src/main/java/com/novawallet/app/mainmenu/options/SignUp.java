@@ -3,10 +3,8 @@ package com.novawallet.app.mainmenu.options;
 import com.novawallet.Main;
 import com.novawallet.app.MenuOption;
 import com.novawallet.entity.User;
-
 import java.util.ArrayList;
 import java.util.Scanner;
-
 import static com.novawallet.app.Utils.capitalize;
 
 public class SignUp implements MenuOption {
@@ -18,7 +16,6 @@ public class SignUp implements MenuOption {
         String name;
         String lastname;
         boolean userExists;
-        boolean isPasswordValid;
         User currentUser;
 
         Scanner sc = new Scanner(System.in);

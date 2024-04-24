@@ -1,22 +1,25 @@
 package com.novawallet.app.convertermenu;
 
+import java.util.Scanner;
 import com.novawallet.app.Menu;
-import com.novawallet.app.mainmenu.options.Exit;
+import com.novawallet.app.SubMenu;
 import com.novawallet.entity.User;
 import com.novawallet.app.convertermenu.options.*;
-
-import java.util.Scanner;
-
 import static com.novawallet.app.Color.*;
-import static com.novawallet.app.Color.RESET;
 import static java.lang.Integer.parseInt;
 
-public class ConverterMenu implements Menu {
+public class ConverterMenu implements Menu, SubMenu {
 
-    public void converterMenu(User user) {
+    @Override
+    public void runMenu(User user) {
+        Scanner sc = new Scanner(System.in);
+        optionSelect(user, sc);
+    }
+
+    @Override
+    public void optionSelect(User user, Scanner sc) {
         int opt;
         do {
-            Scanner sc = new Scanner(System.in);
             printOptions();
             opt = parseInt(sc.nextLine());
             switch (opt) {
@@ -38,9 +41,12 @@ public class ConverterMenu implements Menu {
         } while (opt > 0 && opt < 5);
     }
 
+    @Override
     public void printOptions() {
         System.out.println("What conversion do you want to do?\n");
-        System.out.println("  1.See my balance in other currencies\n  2.Convert CLP\n  3.Convert USD\n  4.Convert EUR\n");
+        System.out.println(STR."  \{GREEN.getColor()}1\{RESET.getColor()}.See my balance in other currencies\n  \{
+                GREEN.getColor()}2\{RESET.getColor()}.Convert CLP\n  \{GREEN.getColor()}3\{
+                RESET.getColor()}.Convert USD\n  \{GREEN.getColor()}4\{RESET.getColor()}.Convert EUR\n");
         System.out.println(STR."Once you write the option, \{YELLOW.getColor()}press ENTER\{RESET.getColor()}.");
         System.out.println(STR."To go back, \{RED.getColor()}press any other number\{RESET.getColor()}.\n");
         System.out.print("Please chose an option: ");

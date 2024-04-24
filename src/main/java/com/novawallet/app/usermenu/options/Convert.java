@@ -8,7 +8,7 @@ public abstract class Convert implements MenuOption {
     public static User run(User user) {
         System.out.println("\nHere you can convert an amount of money from one currency to another.\n------------------------------------------------------------");
         ConverterMenu converterMenu = new ConverterMenu();
-        converterMenu.converterMenu(user);
+        converterMenu.runMenu(user);
         return user;
     }
 }

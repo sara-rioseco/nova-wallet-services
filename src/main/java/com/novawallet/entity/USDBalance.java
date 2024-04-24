@@ -15,8 +15,9 @@ public class USDBalance implements Balance {
     }
 
     @Override
-    public double convertToEUR() {
-        return amount*conversionRateInEUR;
+    public float convertToEUR() {
+        float rounded = Math.round(amount*conversionRateInEUR*100);
+        return rounded / 100;
     }
 
     public String getSymbol() {
