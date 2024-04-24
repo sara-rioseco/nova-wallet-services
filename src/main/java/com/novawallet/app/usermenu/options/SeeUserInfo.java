@@ -35,7 +35,7 @@ public abstract class SeeUserInfo implements MenuOption {
             res.append("\t\tYou don't have any contacts yet.");
         } else {
             for (Contact contact : contacts) {
-                res.append(STR."\t\t\{contacts.indexOf(contact) + 1}. \{contact.getFullName()}, email: \{contact.getEmail()}\n");
+                res.append(STR."\t\t\{GREEN.getColor()}\{contacts.indexOf(contact) + 1}\{RESET.getColor()}. \{contact.getFullName()}, email: \{contact.getEmail()}\n");
             }
         }
         return res.toString();
@@ -47,7 +47,7 @@ public abstract class SeeUserInfo implements MenuOption {
             res.append("\t\tYou don't have any transactions yet.\n");
         } else {
             for (Transaction transaction : transactions) {
-                res.append(STR."\t\t\{transactions.indexOf(transaction) + 1}. On \{formatDate(transaction.getDate())} at \{
+                res.append(STR."\t\t\{GREEN.getColor()}\{transactions.indexOf(transaction) + 1}\{RESET.getColor()}. On \{formatDate(transaction.getDate())} at \{
                     formatTime(transaction.getDate())}, you \{getTransactionAction(transaction, user)} \{(int)transaction.getAmount()} \{transaction.getCurrency()}.\n");
             }
         }

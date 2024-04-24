@@ -21,8 +21,8 @@ Hello \{capitalize(user.getName())}, here you can convert CLP into USD and EUR.
             System.out.println(amount.getAmount() <= 0
                     ? "Invalid amount, conversion failed. Please try again.\n------------------------------------------------------------"
                     : "$" + (int)amount.getAmount() + " CLP is equivalent to "
-                    + "$" + Math.round(amount.convertToUSD()*100)/100 + " USD and "
-                    + "$" + Math.round(amount.convertToEUR()*100)/100 + " EUR.\n------------------------------------------------------------");
+                    + "$" + amount.convertToUSD() + " USD and "
+                    + "$" + amount.convertToEUR() + " EUR.\n------------------------------------------------------------");
         } while (amount.getAmount() <= 0);
     }
 }

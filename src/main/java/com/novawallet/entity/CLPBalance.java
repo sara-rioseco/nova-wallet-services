@@ -41,7 +41,7 @@ public class CLPBalance implements Balance {
         this.conversionRateInEUR = conversionRateInEUR;
     }
 
-    public double getAmount() {
-        return amount;
+    public float getAmount() {
+        return (int)amount;
     }
 }

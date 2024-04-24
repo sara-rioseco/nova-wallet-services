@@ -1,12 +1,12 @@
 package com.novawallet.entity;
 
 public class EURBalance implements Balance {
-    private final double amount;
+    private final float amount;
     private double conversionRateInCLP = 1021; // Al 11 de abril
     private double conversionRateInUSD = 1.08; // Al 11 de abril
 
     public EURBalance(double amount) {
-        this.amount = amount;
+        this.amount = (float)amount;
     }
 
     @Override
@@ -25,7 +25,7 @@ public class EURBalance implements Balance {
         return "EUR";
     }
 
-    public double getAmount() {
+    public float getAmount() {
         return amount;
     }
 

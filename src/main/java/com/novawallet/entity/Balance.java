@@ -2,7 +2,7 @@ package com.novawallet.entity;
 
 public interface Balance {
     String getSymbol();
-    double getAmount();
+    float getAmount();
 
     default float convertToUSD() {
         return 0;

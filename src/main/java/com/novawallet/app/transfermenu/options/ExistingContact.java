@@ -26,7 +26,7 @@ public abstract class ExistingContact implements MenuOption {
         if (notEnoughFunds(user) != null) return user;
 
         int contactsLength = contacts.size();
-        System.out.println("These are your contacts: ");
+        System.out.println("These are your contacts:\n");
         System.out.println(getContactsAsString(contacts));
 
         if(contactsLength <= 0) {
@@ -38,7 +38,7 @@ public abstract class ExistingContact implements MenuOption {
             int option;
             Contact contact;
             do {
-                System.out.print("Who do you want to transfer to? Please enter contact number: ");
+                System.out.print("Who do you want to transfer to?\nPlease enter contact number: ");
                 option = parseInt(sc.nextLine());
                 System.out.println(option <= 0 || option > contactsLength
                         ? "Invalid option, transfer failed. Please try again.\n------------------------------------------------------------"
