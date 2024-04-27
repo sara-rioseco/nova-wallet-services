@@ -9,8 +9,14 @@ import com.novawallet.entity.User;
 import static com.novawallet.app.Color.*;
 import static java.lang.Integer.parseInt;
 
+/**
+ * The type User menu.
+ */
 public class UserMenu implements Menu, SubMenu {
 
+    /**
+     * The User.
+     */
     protected User user;
 
     @Override
@@ -56,9 +62,9 @@ public class UserMenu implements Menu, SubMenu {
     public void printOptions() {
         System.out.println("What do you want to do?\n");
         System.out.println(STR."  \{GREEN.getColor()}1\{RESET.getColor()}.See my balance\n  \{GREEN.getColor()}2\{
-                RESET.getColor()}.Deposit funds\n  \{GREEN.getColor()}3\{RESET.getColor()}.Withdraw funds\n  \{
-                GREEN.getColor()}4\{RESET.getColor()}.Transfer funds\n  \{GREEN.getColor()}5\{
-                RESET.getColor()}.Convert currency\n  \{GREEN.getColor()}6\{RESET.getColor()}.See user information\n");
+            RESET.getColor()}.Deposit funds\n  \{GREEN.getColor()}3\{RESET.getColor()}.Withdraw funds\n  \{
+            GREEN.getColor()}4\{RESET.getColor()}.Transfer funds\n  \{GREEN.getColor()}5\{
+            RESET.getColor()}.Convert currency\n  \{GREEN.getColor()}6\{RESET.getColor()}.See user information\n");
         System.out.println(STR."Once you write the option, \{YELLOW.getColor()}press ENTER\{RESET.getColor()}.");
         System.out.println(STR."To log out and exit, \{RED.getColor()}press any other number\{RESET.getColor()}.");
         System.out.println("------------------------------------------------------------");

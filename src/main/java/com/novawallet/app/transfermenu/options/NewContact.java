@@ -4,13 +4,21 @@ import com.novawallet.Main;
 import com.novawallet.app.MenuOption;
 import com.novawallet.entity.Contact;
 import com.novawallet.entity.User;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
 import static com.novawallet.app.transfermenu.options.ExistingContact.*;
 
+/**
+ * The type New contact.
+ */
 public abstract class NewContact implements MenuOption {
+    /**
+     * Run option with user.
+     *
+     * @param user the user
+     * @return the user
+     */
     public static User run(User user) {
         ArrayList<User> currentUsers = Main.users;
 
@@ -47,8 +55,6 @@ public abstract class NewContact implements MenuOption {
         ArrayList<Contact> contacts = user.getContacts();
         Contact contact = new Contact(contacts.size()+1, name, lastname, email);
         user.addContact(contact);
-//        User contactUser = currentUsers.stream().filter(userItem -> userItem.getEmail().equals(contact.getEmail())).findFirst().orElse(null);
-
         return processTransfer(user, sc, contact);
     }
 

@@ -7,8 +7,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import static com.novawallet.app.Utils.capitalize;
 
+/**
+ * The type Sign up.
+ */
 public class SignUp implements MenuOption {
 
+    @Override
     public User run() {
         ArrayList<User> currentUsers = Main.users;
         String email;

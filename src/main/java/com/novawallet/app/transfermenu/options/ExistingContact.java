@@ -2,20 +2,26 @@ package com.novawallet.app.transfermenu.options;
 
 import com.novawallet.Main;
 import com.novawallet.app.MenuOption;
-import com.novawallet.entity.Balance;
 import com.novawallet.entity.Contact;
 import com.novawallet.entity.Transaction;
 import com.novawallet.entity.User;
-
 import java.util.ArrayList;
 import java.util.Scanner;
-
 import static com.novawallet.app.usermenu.options.SeeUserInfo.getContactsAsString;
 import static com.novawallet.entity.TransactionType.TRANSFER;
 import static java.lang.Integer.parseInt;
 
+/**
+ * The type Existing contact.
+ */
 public abstract class ExistingContact implements MenuOption {
 
+    /**
+     * Run option with user.
+     *
+     * @param user the user
+     * @return the user
+     */
     public static User run(User user) {
         ArrayList<User> currentUsers = Main.users;
         System.out.println("\nHere you can transfer funds from your account to any of your contacts.\n------------------------------------------------------------");
@@ -53,6 +59,12 @@ You've selected contact \{contacts.get(option - 1).getFullName()}
         }
     }
 
+    /**
+     * Not enough funds user.
+     *
+     * @param user the user
+     * @return the user
+     */
     protected static User notEnoughFunds(User user) {
         double balance = user.getBalanceAmount();
 
@@ -63,6 +75,14 @@ You've selected contact \{contacts.get(option - 1).getFullName()}
         return null;
     }
 
+    /**
+     * Process transfer user.
+     *
+     * @param user    the user
+     * @param sc      the sc
+     * @param contact the contact
+     * @return the user
+     */
     protected static User processTransfer(User user, Scanner sc, Contact contact) {
         int amount;
         do {

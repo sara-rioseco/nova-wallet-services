@@ -2,10 +2,8 @@ package com.novawallet.app.transfermenu;
 
 import com.novawallet.app.Menu;
 import com.novawallet.app.SubMenu;
-import com.novawallet.app.mainmenu.options.Exit;
 import com.novawallet.app.transfermenu.options.ExistingContact;
 import com.novawallet.app.transfermenu.options.NewContact;
-import com.novawallet.app.usermenu.options.*;
 import com.novawallet.entity.User;
 
 import java.util.Scanner;
@@ -14,8 +12,14 @@ import static com.novawallet.app.Color.*;
 import static com.novawallet.app.Color.RESET;
 import static java.lang.Integer.parseInt;
 
+/**
+ * The type Transfer menu.
+ */
 public class TransferMenu implements Menu, SubMenu {
 
+    /**
+     * The User.
+     */
     protected User user;
 
     @Override

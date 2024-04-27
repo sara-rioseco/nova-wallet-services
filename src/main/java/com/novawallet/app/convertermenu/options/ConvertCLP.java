@@ -7,7 +7,15 @@ import com.novawallet.entity.User;
 import static com.novawallet.app.Utils.capitalize;
 import static java.lang.Integer.parseInt;
 
+/**
+ * The type Convert clp.
+ */
 public abstract class ConvertCLP implements MenuOption {
+    /**
+     * Run option with user.
+     *
+     * @param user the user
+     */
     public static void run(User user) {
         System.out.println(STR."""
 

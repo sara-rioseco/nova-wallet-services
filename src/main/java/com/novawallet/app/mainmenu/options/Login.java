@@ -7,8 +7,12 @@ import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
 
+/**
+ * The type Login.
+ */
 public class Login implements MenuOption {
 
+    @Override
     public User run() {
         ArrayList<User> currentUsers = Main.users;
         Scanner sc = new Scanner(System.in);

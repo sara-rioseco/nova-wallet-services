@@ -10,7 +10,16 @@ import static com.novawallet.app.Color.*;
 import static com.novawallet.app.Utils.*;
 import static java.lang.StringTemplate.STR;
 
+/**
+ * The type See user info.
+ */
 public abstract class SeeUserInfo implements MenuOption {
+    /**
+     * Run option with user.
+     *
+     * @param user the user
+     * @return the user
+     */
     public static User run(User user) {
         System.out.println(STR."""
 ------------------------------------------------------------
@@ -29,6 +38,12 @@ public abstract class SeeUserInfo implements MenuOption {
         return user;
     }
 
+    /**
+     * Gets contacts as string.
+     *
+     * @param contacts the contacts
+     * @return the contacts as string
+     */
     public static String getContactsAsString (ArrayList<Contact> contacts) {
         StringBuilder res = new StringBuilder();
         if (contacts.isEmpty()) {
@@ -41,6 +56,13 @@ public abstract class SeeUserInfo implements MenuOption {
         return res.toString();
     }
 
+    /**
+     * Gets transactions as string.
+     *
+     * @param transactions the transactions
+     * @param user the user
+     * @return the transactions as string
+     */
     private static String getTransactionsAsString (ArrayList<Transaction> transactions, User user) {
         StringBuilder res = new StringBuilder();
         if (transactions.isEmpty()) {
@@ -54,6 +76,13 @@ public abstract class SeeUserInfo implements MenuOption {
         return res.toString();
     }
 
+    /**
+     * Gets transaction action as string.
+     *
+     * @param transaction the transaction
+     * @param user the user
+     * @return the transaction action as string
+     */
     private static String getTransactionAction(Transaction transaction, User user) {
         if (transaction.getType() == TransactionType.TRANSFER) {
             if (transaction.getSenderId() == user.getId()) {

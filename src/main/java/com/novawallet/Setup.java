@@ -8,7 +8,15 @@ import java.util.ArrayList;
 
 import static com.novawallet.entity.TransactionType.TRANSFER;
 
+/**
+ * The type Setup.
+ */
 public class Setup {
+    /**
+     * Create test users.
+     *
+     * @param users the users
+     */
     protected static void createTestUsers(ArrayList<User> users) {
 
         // Creación de usuario admin

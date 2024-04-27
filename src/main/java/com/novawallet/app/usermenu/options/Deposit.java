@@ -7,8 +7,17 @@ import com.novawallet.entity.User;
 import static com.novawallet.entity.TransactionType.DEPOSIT;
 import static java.lang.Integer.parseInt;
 
+/**
+ * The type Deposit.
+ */
 public abstract class Deposit implements MenuOption {
 
+    /**
+     * Run option with user.
+     *
+     * @param user the user
+     * @return the user
+     */
     public static User run(User user) {
 
         System.out.println("\nHere you can deposit funds in "+ user.getBalanceCurrency()+" to your account.\n------------------------------------------------------------");

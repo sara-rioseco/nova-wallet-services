@@ -1,61 +1,88 @@
 package com.novawallet.entity;
 
 import java.time.LocalDateTime;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
-import org.mockito.junit.MockitoJUnitRunner;
-
 import static com.novawallet.entity.TransactionType.TRANSFER;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+/**
+ * Test the type Transaction.
+ */
 class TransactionTest {
 
+    /**
+     * The Transaction.
+     */
+    Transaction transaction;
+
+    /**
+     * Sets up.
+     */
+    @BeforeEach
+    public void setUp() {
+        transaction = new Transaction(1, 100.0, TRANSFER, 1001, 1002);
+    }
+
+    /**
+     * Test get id.
+     */
     @Test
     public void testGetId() {
-        Transaction transaction = new Transaction(1, 100.0, TRANSFER,1001, 1002);
         int id = transaction.getId();
         assertEquals(1, id);
     }
 
+    /**
+     * Test get amount.
+     */
     @Test
     public void testGetAmount() {
-        Transaction transaction = new Transaction(1, 100.0, TRANSFER, 1001, 1002);
         double amount = transaction.getAmount();
         assertEquals(100.0, amount, 0.0);
     }
 
+    /**
+     * Test get type.
+     */
     @Test
     public void testGetType() {
-        Transaction transaction = new Transaction(1, 100.0, TRANSFER, 1001, 1002);
         TransactionType type = transaction.getType();
         assertEquals(TRANSFER, type);
     }
 
+    /**
+     * Test get currency.
+     */
     @Test
     public void testGetCurrency() {
-        Transaction transaction = new Transaction(1, 100.0, TRANSFER,1001, 1002);
         String currency = transaction.getCurrency();
         assertEquals("CLP", currency);
     }
 
+    /**
+     * Test get sender id.
+     */
     @Test
     public void testGetSenderId() {
-        Transaction transaction = new Transaction(1, 100.0, TRANSFER,1001, 1002);
         int senderId = transaction.getSenderId();
         assertEquals(1001, senderId);
     }
 
+    /**
+     * Test get receiver id.
+     */
     @Test
     public void testGetReceiverId() {
-        Transaction transaction = new Transaction(1, 100.0, TRANSFER, 1001, 1002);
         int receiverId = transaction.getReceiverId();
         assertEquals(1002, receiverId);
     }
 
+    /**
+     * Test get date with mock.
+     */
     @Test
     public void testGetDate() {
         LocalDateTime mockDateTime = LocalDateTime.of(2022, 1, 1, 12, 0);
@@ -65,9 +92,11 @@ class TransactionTest {
         assertEquals(mockDateTime, date);
     }
 
+    /**
+     * Test get date.
+     */
     @Test
     public void testGetDateAgain() {
-        Transaction transaction = new Transaction(1, 100.0, TRANSFER,1001, 1002);
         LocalDateTime now = LocalDateTime.now();
         LocalDateTime dateTime = transaction.getDate();
         assertEquals(now.toLocalDate(), dateTime.toLocalDate());

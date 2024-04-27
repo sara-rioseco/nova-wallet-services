@@ -8,6 +8,9 @@ import com.novawallet.app.convertermenu.options.*;
 import static com.novawallet.app.Color.*;
 import static java.lang.Integer.parseInt;
 
+/**
+ * The type Converter menu.
+ */
 public class ConverterMenu implements Menu, SubMenu {
 
     @Override

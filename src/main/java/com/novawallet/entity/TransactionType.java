@@ -1,5 +1,19 @@
 package com.novawallet.entity;
 
+/**
+ * The enum Transaction type.
+ */
 public enum TransactionType {
-    DEPOSIT, WITHDRAWAL, TRANSFER
+    /**
+     * Deposit transaction type.
+     */
+    DEPOSIT,
+    /**
+     * Withdrawal transaction type.
+     */
+    WITHDRAWAL,
+    /**
+     * Transfer transaction type.
+     */
+    TRANSFER
 }

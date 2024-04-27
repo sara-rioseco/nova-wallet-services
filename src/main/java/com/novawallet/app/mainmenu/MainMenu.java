@@ -10,8 +10,16 @@ import com.novawallet.entity.User;
 import static com.novawallet.app.Color.*;
 import static java.lang.Integer.parseInt;
 
+/**
+ * The type Main menu.
+ */
 public class MainMenu implements Menu {
 
+    /**
+     * Run menu.
+     *
+     * @param users the users
+     */
     public void runMenu(ArrayList<User> users){
 
         // Ejecución de menu principal
@@ -26,6 +34,12 @@ public class MainMenu implements Menu {
         System.out.println(STR."\{RED.getColor()}Program closed.\{RESET.getColor()}");
     }
 
+    /**
+     * Option select.
+     *
+     * @param users the users
+     * @param sc    the scanner
+     */
     public void optionSelect(ArrayList<User> users, Scanner sc) {
         User newUser;
         User currentUser;
@@ -55,6 +69,9 @@ public class MainMenu implements Menu {
         } while (opt > 0 && opt < 3);
     }
 
+    /**
+     * Print Options
+     */
     @Override
     public void printOptions() {
         System.out.println(STR."What do you want to do?\n\n  \{GREEN.getColor()}1\{RESET.getColor()}.Login\n  \{GREEN.getColor()}2\{RESET.getColor()}.Sign Up\n");
