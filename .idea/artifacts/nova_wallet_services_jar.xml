@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="nova-wallet-services:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/nova_wallet_services_jar</output-path>
+    <root id="archive" name="nova-wallet-services.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="nova-wallet-services" />
+    </root>
+  </artifact>
+</component>

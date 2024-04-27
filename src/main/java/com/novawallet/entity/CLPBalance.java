@@ -21,6 +21,10 @@ public class CLPBalance implements Balance {
         return rounded / 100;
     }
 
+    public float getAmount() {
+        return (float)amount;
+    }
+
     public String getSymbol() {
         return "CLP";
     }
@@ -41,7 +45,4 @@ public class CLPBalance implements Balance {
         this.conversionRateInEUR = conversionRateInEUR;
     }
 
-    public float getAmount() {
-        return (int)amount;
-    }
 }

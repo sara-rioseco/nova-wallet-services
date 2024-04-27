@@ -4,15 +4,15 @@ import java.time.LocalDateTime;
 
 public class Transaction {
     private final int id;
-    private final Balance amount;
+    private final Balance balance;
     private final TransactionType type;
     private final int senderId;
     private final int receiverId;
     private final LocalDateTime date = LocalDateTime.now();
 
-    public Transaction(int id, double amount, TransactionType type, int senderId, int receiverId) {
+    public Transaction(int id, double balance, TransactionType type, int senderId, int receiverId) {
         this.id = id;
-        this.amount = new CLPBalance(amount);
+        this.balance = new CLPBalance(balance);
         this.type = type;
         this.senderId = senderId;
         this.receiverId = receiverId;
@@ -23,7 +23,7 @@ public class Transaction {
     }
 
     public double getAmount() {
-        return amount.getAmount();
+        return balance.getAmount();
     }
 
     public TransactionType getType() {
@@ -31,7 +31,7 @@ public class Transaction {
     }
 
     public String getCurrency() {
-        return amount.getSymbol();
+        return balance.getSymbol();
     }
 
     public int getSenderId() {

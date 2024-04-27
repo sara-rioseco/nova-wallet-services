@@ -21,7 +21,7 @@ class BalanceTest {
 
     @Test
     void testGetAmount() {
-        when(balance.getAmount()).thenReturn(100.0);
+        when(balance.getAmount()).thenReturn(100.0F);
         double amount = balance.getAmount();
         assertEquals(100.0, amount);
     }

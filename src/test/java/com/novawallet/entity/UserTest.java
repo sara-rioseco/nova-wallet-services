@@ -107,18 +107,6 @@ class UserTest {
     }
 
     @Test
-    public void testGetRole(){
-        String role = user.getRole();
-        assertEquals("user", role);
-    }
-
-    @Test
-    public void testSetRole() {
-        user.setRole("admin");
-        assertEquals("admin", user.getRole());
-    }
-
-    @Test
     public void testGetBalanceCurrency(){
         String currency = user.getBalanceCurrency();
         assertEquals("CLP", currency);

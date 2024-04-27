@@ -10,7 +10,6 @@ public class User {
     private String lastname;
     private String email;
     private String password;
-    private String role = "user";
     private Balance balance = new CLPBalance(0);
     private ArrayList<Transaction> transactions = new ArrayList<>();
     private ArrayList<Contact> contacts = new ArrayList<>();
@@ -53,6 +52,10 @@ public class User {
         this.lastname = lastname;
     }
 
+    public String getFullName() {
+        return STR."\{capitalize(name)} \{capitalize(lastname)}";
+    }
+
     public String getEmail() {
         return email;
     }
@@ -67,14 +70,6 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
     }
 
     public String getBalanceCurrency() {
@@ -118,9 +113,4 @@ public class User {
     public void addContact(Contact contact) {
         this.contacts.add(contact);
     }
-
-    public String getFullName() {
-        return STR."\{capitalize(name)} \{capitalize(lastname)}";
-    }
-
 }
