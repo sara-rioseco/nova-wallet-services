@@ -1,5 +1,5 @@
-# NovaWallet Console Application 💸
-NovaWallet is a Java console application that simulates e-wallet functionalities, allowing users to perform various operations related to fund management and currency transactions. While this application provides a comprehensive simulation, it's important to note that it is intended for educational and demonstration purposes only.
+# NovaWallet Services Console Application 💸
+NovaWallet Services is a Java console application that simulates e-wallet functionalities, allowing users to perform various operations related to fund management and currency transactions. While this application provides a comprehensive simulation, it's important to note that it is intended for educational and demonstration purposes only.
 ---
 ### Features 💁
 - **User Registration and Login:** Users can register their accounts and log in securely to access their e-wallet functionalities.
