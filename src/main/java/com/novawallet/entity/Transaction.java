@@ -44,7 +44,7 @@ public class Transaction {
      *
      * @return the amount
      */
-    public double getAmount() {
+    public float getAmount() {
         return balance.getAmount();
     }
 
